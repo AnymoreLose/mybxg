@@ -1340,7 +1340,7 @@ jQuery.support = (function() {
 		tbody: !div.getElementsByTagName("tbody").length,
 
 		// Make sure that link elements get serialized correctly by innerHTML
-		// This requires a wrapper element in IE
+		// This require a wrapper element in IE
 		htmlSerialize: !!div.getElementsByTagName("link").length,
 
 		// Get the style information from getAttribute
@@ -4583,7 +4583,7 @@ Expr = Sizzle.selectors = {
 			match[1] = match[1].toLowerCase();
 
 			if ( match[1].slice( 0, 3 ) === "nth" ) {
-				// nth-* requires argument
+				// nth-* require argument
 				if ( !match[3] ) {
 					Sizzle.error( match[0] );
 				}

@@ -50,7 +50,7 @@
         });
     });
 
-    You can also use ajaxForm with delegation (requires jQuery v1.7+), so the
+    You can also use ajaxForm with delegation (require jQuery v1.7+), so the
     form does not have to exist when you invoke ajaxForm:
 
     $('#myForm').ajaxForm({
