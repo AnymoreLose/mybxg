@@ -1,4 +1,4 @@
-define(['jquery','cookie'],function($) {
+define(['jquery','template','cookie'],function($,template) {
 
 	//NProgress.start();
 	//NProgress.done();
@@ -34,13 +34,21 @@ define(['jquery','cookie'],function($) {
 	}
 
 // 设置用户头像信息
-//console.log($.cookie('loginInfo'));
+	//console.log($.cookie('loginInfo')); 获取数据
 	var loginInfo = $.cookie('loginInfo');
-// 判断 有信息 ，才能转JSON格式，否则会报错
+	// 判断 有信息 ，才能转JSON格式，否则会报错
 	loginInfo = loginInfo && JSON.parse(loginInfo);
-// 设置 头像信息
-	$('.aside > .profile img').attr('src',loginInfo.tc_avatar);
-	$('.aside > .profile h4').html(loginInfo.tc_name);
+	// 设置 头像信息
+	//$('.aside > .profile img').attr('src',loginInfo.tc_avatar);
+	//$('.aside > .profile h4').html(loginInfo.tc_name);
+
+	/* 用户头像动态渲染 */
+	var tpl = '<div class="avatar img-circle">'
+			  +'<img src="{{tc_avatar}}">'
+			  +'</div>'
+			  +'<h4>{{tc_name}}</h4>';
+	var html = template.render(tpl,loginInfo);
+	$('.aside > .profile').html(html);
 
 });
 

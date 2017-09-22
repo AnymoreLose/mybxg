@@ -7,8 +7,9 @@ define(['jquery','cookie'],function($) {
             data: $('#loginForm').serialize(),  // 获取所有的表单数据
             dataType: 'json',
             success: function(data) {
-                //console.log(data);
+                console.log(data);
                 if(data.code == 200) {
+                    console.log(data);
                     // 把用户的登录信息存储到 cookie中，方便跨页面共享数据
                     $.cookie('loginInfo',JSON.stringify(data.result),{path:'/'});
                     // 登录成功，跳转到主页面
