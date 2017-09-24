@@ -28,7 +28,7 @@
     <!-- 模板渲染-->
     <script type="text/template" id="teacherTpl">
         <ol class="breadcrumb">
-            <li><a href="javascript:;">讲师管理</a></li>
+            <li><a href="/teacher/list">讲师管理</a></li>
             <li class="active">
                 {{if tc_id}}
                 讲师编辑
@@ -46,23 +46,26 @@
                 <div class="form-group">
                     <label for="" class="col-xs-3 control-label">姓名</label>
                     <div class="col-xs-4">
-                        <input name="tc_name" value="{{tc_name}}" type="text" class="form-control input-sm" placeholder="讲师名称">
+                        <input data-required data-description="tcName" data-describedby="tcNameInfo" name="tc_name" value="{{tc_name}}" type="text" class="form-control input-sm" placeholder="讲师名称">
                     </div>
+                    <div class="col-xs-2" id="tcNameInfo"></div>
                 </div>
                 <!-- 判断是否 有 tc_id 有就隐藏-->
                 {{if !tc_id}}
                 <div class="form-group">
                     <label for="" class="col-xs-3 control-label">密码</label>
                     <div class="col-xs-4">
-                        <input name="tc_pass" type="password" class="form-control input-sm">
+                        <input data-required data-description="tcPass" data-describedby="tcPassInfo" data-pattern="^\d{6}$" name="tc_pass" type="password" class="form-control input-sm">
                     </div>
+                    <div class="col-xs-2" id="tcPassInfo"></div>
                 </div>
                 {{/if}}
                 <div class="form-group">
                     <label for="" class="col-xs-3 control-label">入职时间</label>
                     <div class="col-xs-4">
-                        <input data-provide="datepicker" data-date-language="zh-CN" data-date-format="yyyy-mm-dd" name="tc_join_date" value="{{tc_join_date}}" type="text" class="form-control input-sm">
+                        <input data-required data-description="tcJoinDate" data-describedby="tcJoinDateInfo" data-provide="datepicker" data-date-language="zh-CN" data-date-format="yyyy-mm-dd" name="tc_join_date" value="{{tc_join_date}}" type="text" class="form-control input-sm">
                     </div>
+                    <div class="col-xs-2" id="tcJoinDateInfo"></div>
                 </div>
                 <div class="form-group">
                     <label for="" class="col-xs-3 control-label">类型</label>
@@ -89,7 +92,7 @@
                 <div class="form-group">
                     <div class="col-xs-7">
                         <!-- 实现修改、添加功能 按钮 teacher-add.js-->
-                        <input id="teacherBtn" type="button" value="{{if tc_id}}修改{{else}}添加{{/if}}" class="btn btn-success btn-sm pull-right"/>
+                        <input id="teacherBtn" type="submit" value="{{if tc_id}}修改{{else}}添加{{/if}}" class="btn btn-success btn-sm pull-right"/>
                     </div>
                 </div>
             </form>

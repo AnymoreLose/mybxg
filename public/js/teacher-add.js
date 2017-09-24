@@ -1,4 +1,4 @@
-define(['jquery','template','util','datepicker','language'],function($,template,util) {
+define(['jquery','template','util','datepicker','language','validate','form'],function($,template,util) {
 
     console.dir(location);
     var tcId = util.qs('tc_id');
@@ -30,8 +30,43 @@ define(['jquery','template','util','datepicker','language'],function($,template,
         //submitForm('add');
     }
 
-    // 实现表单 修改、添加功能
+    // 实现 表单验证 修改、添加功能（插件方法）
     function submitForm(url) {
+        $('#teacherForm').validate({
+            // 禁掉默认 的 submit 提交功能
+            sendForm : false,
+            // 验证有效的 处理
+            valid : function() {
+                $(this).ajaxSubmit({
+                    type : 'post',
+                    url : url,
+                    dataType : 'json',
+                    success : function(data) {
+                        if(data.code == 200) {
+                            location.href = '/teacher/list';
+                        }
+                    }
+                })
+            },
+            // 提示信息
+            description : {
+                tcName : {
+                    required : '用户名不能为空'
+                },
+                tcPass : {
+                    required : '密码不能为空',
+                    pattern : '密码必须为六位数字'
+                },
+                tcJoinDate : {
+                    required : '日期不能为空'
+                }
+            }
+        });
+    }
+
+
+    // 实现 表单 修改、添加功能
+   /* function submitForm(url) {
         $('#teacherBtn').click(function() {
             $.ajax({
                 type: 'post',
@@ -46,6 +81,6 @@ define(['jquery','template','util','datepicker','language'],function($,template,
                 }
             })
         });
-    }
+    }*/
 
 });
