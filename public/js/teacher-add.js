@@ -1,4 +1,4 @@
-define(['jquery','template','util'],function($,template,util) {
+define(['jquery','template','util','datepicker','language'],function($,template,util) {
 
     console.dir(location);
     var tcId = util.qs('tc_id');
