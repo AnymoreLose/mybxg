@@ -42,6 +42,7 @@
                     {{else}}
                     <img src="/public/images/default.png">
                     {{/if}}
+                    <!-- 头像上传操作-->
                     <input type="file" id="upfile">
                     <div class="cover">
                         <i class="fa fa-upload"></i>
@@ -118,9 +119,9 @@
             </div>
             <div class="form-group">
                 <div class="col-xs-8">
-                    <input type="button" class="btn btn-success btn-sm pull-right" value="保 存"/>
+                    <input id="settingsBtn" type="button" class="btn btn-success btn-sm pull-right" value="保 存"/>
 
-                    <a href="/views/main/repass.html" class="btn btn-link btn-sm pull-right">更改密码？</a>
+                    <a href="<!--/views/main/repass.html-->" class="btn btn-link btn-sm pull-right">更改密码？</a>
                 </div>
             </div>
         </form>
