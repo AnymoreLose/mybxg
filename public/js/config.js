@@ -12,6 +12,7 @@ require.config({
         util : '../js/util',
         common : '../js/common',
         login : '../js/login',
+        settings : '../js/settings',
         teacherlist : '../js/teacher-list',
         teacheradd : '../js/teacher-add'
     },
