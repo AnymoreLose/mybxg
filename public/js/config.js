@@ -7,8 +7,8 @@ require.config({
         bootstrap : 'bootstrap/js/bootstrap.min',   // 模态框插件 等
         datepicker : 'bootstrap-datepicker/js/bootstrap-datepicker',  // 日期格式
         language : 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min', // 日期语言
-        validate : 'validate/jquery-validate',      //  验证插件？
-        form : 'jquery-form/jquery.form',           //  表单形式？
+        validate : 'validate/jquery-validate',      //  （表单）验证插件
+        form : 'jquery-form/jquery.form',           //  表单插件
         uploadify : 'uploadify/jquery.uploadify.min', // 图片上传插件
         region : 'jquery-region/jquery.region',      //
         ckeditor : 'ckeditor/ckeditor',             // 富文本插件
