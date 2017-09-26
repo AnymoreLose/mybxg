@@ -8,7 +8,7 @@ require.config({
         datepicker : 'bootstrap-datepicker/js/bootstrap-datepicker',  // 日期格式
         language : 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min', // 日期语言
         validate : 'validate/jquery-validate',      //  （表单）验证插件
-        form : 'jquery-form/jquery.form',           //  表单插件
+        form : 'jquery-form/jquery.form',           //  表单提交插件
         uploadify : 'uploadify/jquery.uploadify.min', // 图片上传插件
         region : 'jquery-region/jquery.region',      //
         ckeditor : 'ckeditor/ckeditor',             // 富文本插件
@@ -21,6 +21,7 @@ require.config({
         index : '../js/index',
         courselist : '../js/course-list',
         courseadd : '../js/course-add',
+        coursebasic : '../js/course-basic',
         coursecategory : '../js/course-category',
         coursetopic : '../js/course-topic'
     },

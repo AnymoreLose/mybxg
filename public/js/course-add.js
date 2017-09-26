@@ -1,4 +1,4 @@
-define(['jquery','template','util','form','validate'],function($,template,util) {
+define(['jquery','template','util','form'],function($,template,util) {
 
     // 设置 导航菜单选中高亮显示
     util.setMenu(location.pathname);
@@ -8,7 +8,7 @@ define(['jquery','template','util','form','validate'],function($,template,util) 
         //创建课程 提交功能
         $('#courseForm').ajaxSubmit({
             type : 'post',
-            url : '/api/chapter/create',
+            url : '/api/course/create',
             dataType : 'json',
             success : function(data) {
                 console.log(data);
