@@ -1,4 +1,9 @@
-define(['jquery','template','bootstrap'],function($,template) {
+define(['jquery','template','util','bootstrap'],function($,template,util) {
+
+    // 设置 导航菜单选中高亮显示
+    util.setMenu(location.pathname);
+    console.log(location.pathname);
+
     // 调用接口 获取所有的讲师数据
     $.ajax({
         type : 'get',

@@ -19,6 +19,10 @@ define(['jquery'],function($) {
                 });
             }
             return result;
+        },
+        setMenu : function(path) {
+            // 设置 导航菜单选中高亮显示
+            $('.aside .navs a[href="'+path+'"]').addClass('active').closest('ul').show();
         }
     }
 });

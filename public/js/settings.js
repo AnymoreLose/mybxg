@@ -1,5 +1,6 @@
 define(['jquery','template','ckeditor','uploadify','region','datepicker','language','validate','form'],function($,template,CKEDITOR) {
 
+
     // 调用接口获取个人信息
     $.ajax({
         type : 'get',
