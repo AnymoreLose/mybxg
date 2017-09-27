@@ -63,7 +63,7 @@ define(['jquery','template','ckeditor','uploadify','region','datepicker','langua
                         data : {tc_hometown:hometown},
                         dataType : 'json',
                         success : function(data) {
-                            console.log(data);
+                            //console.log(data);
                             if(data.code == 200) {
                                 // 修改成功后 重新刷新当前页面
                                 location.reload();

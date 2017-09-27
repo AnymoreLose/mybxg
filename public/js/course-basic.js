@@ -1,4 +1,4 @@
-define(['jquery','template','util','ckeditor'],function($,template,util,CKEDITOR) {
+define(['jquery','template','util','ckeditor','validate','form'],function($,template,util,CKEDITOR) {
 
     // 设置 导航菜单选中高亮显示
     util.setMenu('/course/add');
@@ -14,7 +14,7 @@ define(['jquery','template','util','ckeditor'],function($,template,util,CKEDITOR
         url : '/api/course/basic',
         data : {cs_id : csId},
         success : function(data) {
-            console.log(data);
+            //console.log(data);
             //解析数据，渲染页面
             if (flag) {
                 data.result.operate = '课程编辑';
@@ -55,6 +55,30 @@ define(['jquery','template','util','ckeditor'],function($,template,util,CKEDITOR
                     { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
                     { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] }
                 ]
+            });
+
+            // 处理表单提交
+            $('#basicForm').validate({
+                sendForm : false,
+                valid : function() {
+                    // 同步富文本信息   instance ：实例
+                    for(var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                    //表单提交
+                    $(this).ajaxSubmit({
+                        type : 'post',
+                        url : '/api/course/update/basic',
+                        data : {cs_id : csId},
+                        dataType : 'json',
+                        success : function(data) {
+                            //console.log(data);
+                            if(data.code == 200) {
+                                location.href = '/course/picture?cs_id=' + data.result.cs_id;
+                            }
+                        }
+                    })
+                }
             });
         }
     });
