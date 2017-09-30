@@ -1,4 +1,4 @@
-define(['jquery','template','util','bootstrap'],function($,template,util) {
+define(['jquery','template','util','bootstrap','form'],function($,template,util) {
 
 	// 设置 导航菜单选中高亮显示
     util.setMenu('/course/add');
@@ -26,6 +26,21 @@ define(['jquery','template','util','bootstrap'],function($,template,util) {
                 // 显示模态框
                 $('#chapterModal').modal();
 
+                // 绑定添加课时 提交事件
+                $('#addOrEditLesson').click(function() {
+                    $('#lessonForm').ajaxSubmit({
+                        type : 'post',
+                        url : '/api/course/chapter/add',
+                        data : {ct_cs_id : csId},
+                        dataType : 'json',
+                        success : function(data) {
+                            if(data.code == 200) {
+                                location.reload();
+                            }
+                        }
+                    })
+                });
+
             });
 
             // 绑定编辑课时点击事件
@@ -46,12 +61,29 @@ define(['jquery','template','util','bootstrap'],function($,template,util) {
                         var html = template('modalTpl',data.result);
                         $('#modalInfo').html(html);
 
+
+                        // 绑定 编辑课时 提交事件
+                        $('#addOrEditLesson').click(function() {
+                            $('#lessonForm').ajaxSubmit({
+                                type : 'post',
+                                url : '/api/course/chapter/modify',
+                                data : {ct_cs_id : csId,ct_id : ctId},
+                                dataType : 'json',
+                                success : function(data) {
+                                    if(data.code == 200) {
+                                        location.reload();
+                                    }
+                                }
+                            });
+                        });
                     }
                 });
 
                 // 显示模态框
                 $('#chapterModal').modal();
             });
+
+
         }
     })
 
