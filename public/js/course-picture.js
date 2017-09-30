@@ -4,6 +4,7 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
     util.setMenu('/course/add');
     // 获取课程ID
     var csId = util.qs('cs_id');
+
     // 获取课程封面数据
     $.ajax({
         type : 'get',
@@ -48,8 +49,8 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
                 if(flag) {
                     // 第二次点击 ，提交页面（跳转到下一步）
                     $('#cropForm').ajaxSubmit({
-                        type : 'get',
-                        url : '/api/course/picture',
+                        type : 'post',
+                        url : '/api/course/update/picture',
                         data : {cs_id : csId},
                         dataType : 'json',
                         success : function(data) {
