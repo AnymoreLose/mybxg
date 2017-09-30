@@ -12,6 +12,7 @@ require.config({
         uploadify : 'uploadify/jquery.uploadify.min', // 图片上传插件
         region : 'jquery-region/jquery.region',      //
         ckeditor : 'ckeditor/ckeditor',             // 富文本插件
+        jcrop : 'jcrop/js/Jcrop',
         util : '../js/util',                       // 自己封装的工具
         common : '../js/common',                   //
         login : '../js/login',
@@ -23,6 +24,7 @@ require.config({
         courseadd : '../js/course-add',
         coursebasic : '../js/course-basic',
         coursepicture : '../js/course-picture',
+        courselesson : '../js/course-lesson',
         coursecategory : '../js/course-category',
         coursetopic : '../js/course-topic'
     },
@@ -41,6 +43,9 @@ require.config({
         },
         ckeditor : {
             exports : 'CKEDITOR'
+        },
+        jcrop : {
+            deps : ['jquery']
         }
     }
 });

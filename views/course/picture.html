@@ -5,9 +5,12 @@
     <title>学IT - 后台管理系统</title>
     <?php include('./views/common/style.html'); ?>
 
+    <!-- 图片裁切功能插件需要-->
+    <link rel="stylesheet" type="text/css" href="/public/assets/jcrop/css/Jcrop.css"/>
+
 </head>
     <body>
-
+    <input type="text" value="dd"/>
         <!-- 侧边栏 -->
         <?php include('./views/common/aside.html'); ?>
         <!-- 主体 -->
@@ -21,6 +24,15 @@
 
                 </div>
             </div>
+
+            <!-- 存储表单提交信息（二次点击提交事件）-->
+            <form id="cropForm" style="display: none;">
+                <input type="text" name="x"/>
+                <input type="text" name="y"/>
+                <input type="text" name="w"/>
+                <input type="text" name="h"/>
+            </form>
+
         </div>
 
         <!-- 模板渲染-->
@@ -90,7 +102,7 @@
                             <!--<a href="lesson.html" class="btn btn-success btn-sm">选择图片</a>-->
                         </div>
                         <div class="col-xs-2">
-                            <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+                            <a id="cropBtn" href="javascript:;" class="btn btn-warning btn-sm">裁切图片</a>
                         </div>
                     </div>
                 </div>
