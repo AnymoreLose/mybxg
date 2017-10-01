@@ -1,4 +1,4 @@
-define(['jquery','cookie'],function($) {
+define(['jquery','cookie','state'],function($) {
     // 登录功能
     $('#loginBtn').click(function() {
         $.ajax({

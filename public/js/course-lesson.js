@@ -1,4 +1,4 @@
-define(['jquery','template','util','bootstrap','form'],function($,template,util) {
+define(['jquery','template','util','bootstrap','state','form'],function($,template,util) {
 
 	// 设置 导航菜单选中高亮显示
     util.setMenu('/course/add');

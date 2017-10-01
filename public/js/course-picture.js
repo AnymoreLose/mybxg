@@ -1,4 +1,4 @@
-define(['jquery','template','util','uploadify','jcrop','form'],function($,template,util) {
+define(['jquery','template','util','uploadify','jcrop','form','state'],function($,template,util) {
 
     // 设置导航菜单选中
     util.setMenu('/course/add');

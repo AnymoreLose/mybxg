@@ -1,4 +1,4 @@
-define(['jquery','template','util','ckeditor','validate','form'],function($,template,util,CKEDITOR) {
+define(['jquery','template','util','ckeditor','validate','form','state'],function($,template,util,CKEDITOR) {
 
     // 设置 导航菜单选中高亮显示
     util.setMenu('/course/add');

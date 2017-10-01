@@ -13,6 +13,8 @@ require.config({
         region : 'jquery-region/jquery.region',      //
         ckeditor : 'ckeditor/ckeditor',             // 富文本插件
         jcrop : 'jcrop/js/Jcrop',
+        nprogress : 'nprogress/nprogress',     // 插件 加载状态（小蓝条）
+        echarts : 'echarts/echarts.min',     //柱状图 插件
         util : '../js/util',                       // 自己封装的工具
         common : '../js/common',                   //
         login : '../js/login',
@@ -26,7 +28,8 @@ require.config({
         coursepicture : '../js/course-picture',
         courselesson : '../js/course-lesson',
         coursecategory : '../js/course-category',
-        coursetopic : '../js/course-topic'
+        coursetopic : '../js/course-topic',
+        state : '../js/state'       // 加载状态
     },
     shim : {
         bootstrap : {
